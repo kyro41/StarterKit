@@ -17,7 +17,7 @@ data "aws_ami" "windows2016" {
 
 module "windows2016" {
   source      = "./windows"
-  tagname     = "windows2016-sft"
+  tagname     = "win-target"
   environment = "${var.environment}"
   ami         = "${data.aws_ami.windows2016.id}"
   userdata    = "${data.template_file.sftd-windows-userdata.rendered}"
