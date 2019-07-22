@@ -12,7 +12,7 @@ resource "aws_instance" "sft-windows" {
   key_name               = "sftwindeployer-key"
 
   tags = {
-    Name        = "win-${var.tagname}-${count.index}"
+    Name        = "${var.tagname}-${count.index}"
     Environment = "${var.environment}"
     terraform   = true
   }
